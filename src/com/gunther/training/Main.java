@@ -4,9 +4,9 @@ public class Main {
 
     public static void main(String[] args) {
         double value1=100.0d;
-        double value2=50.0d;
+        double value2=0.0d;
         double result=0.0d;
-        char opCode='a';
+        char opCode='d';
 
 
 
@@ -16,11 +16,14 @@ public class Main {
             result = value1 - value2;
         else if(opCode=='m')
             result = value1 * value2;
-        else if (opCode=='d')
-            result= value1 / value2;
-        else
-            result= 0.0d;
-
+        else if (opCode=='d') {
+            if (value2 != 0)
+                result = value1 / value2;
+        }
+        else {
+            System.out.println("Invalid OpCode"+ opCode);
+            result = 0.0d;
+        }
         System.out.println(result);
     }
 }
